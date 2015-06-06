@@ -1,0 +1,10 @@
+{
+  "name": "loicgoyet",
+  "authors": [
+    "Loic Goyet <loic@appventus.com>"
+  ],
+  "dependencies": {
+    "sully-prefixes": "master",
+    "bourbon": "4.2.0"
+  }
+}

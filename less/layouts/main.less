@@ -1,0 +1,47 @@
+#col-main {
+    .flex(0 0 @col-main_width__xl);
+
+    .flex-display();
+    .flexbox-direction(column);
+    .flexbox-justify(center);
+
+    font-size: 30px;
+    line-height: 2;
+    text-align: center;
+
+    strong {
+        font-size: 40px;
+        letter-spacing: 0.01em;
+    }
+}
+
+
+@media all and (max-width: @screen-lg-max) {
+    #col-main {
+        .flex(0 0 100%) !important;
+        .order(-1);
+        height: @col-main_height;
+
+        font-size: 28px;
+        line-height: 1.8;
+
+        strong {
+            font-size: 36px;
+        }
+    }
+}
+
+@media all and (max-width: @screen-sm-max) {
+    #col-main {
+        .flexbox-direction(row);
+        font-size: 20px;
+        height: @col-main_height__sm;
+        line-height: @col-main_height__sm;
+
+        strong {
+            font-size: 24px;
+            margin-right: 10px;
+            margin-left: 10px;
+        }
+    }
+}

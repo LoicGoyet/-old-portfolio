@@ -1,0 +1,19 @@
+.visible,
+.visible-xs {
+  display: none; }
+
+@media all and (min-width: 401px) {
+  .visible-sm {
+    display: none; } }
+
+@media all and (min-width: 768px) {
+  .visible-md {
+    display: none; } }
+
+@media all and (min-width: 992px) {
+  .visible-lg {
+    display: none; } }
+
+@media all and (min-width: 1200px) {
+  .visible-xl {
+    display: none; } }

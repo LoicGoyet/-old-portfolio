@@ -1,0 +1,78 @@
+body {
+    margin: 0;
+}
+
+#content {
+    @include display(flex);
+    height: 100%;
+
+    @media all and (max-width: $screen-lg-max) {
+        @include flex-wrap (wrap);
+
+        > * {
+            @include flex (1 1 25%);
+        }
+    }
+
+    @media all and (max-width: $screen-md-max) {
+        > * {
+            @include flex (1 1 50%);
+        }
+    }
+
+    @media all and (max-width: $screen-sm-max) {
+        height: auto
+    }
+
+    @media all and (max-width: $screen-xs-max) {
+        > * {
+            @include flex (1 1 100%);
+        }
+    }
+}
+
+.col-side {
+    @include flex (1 0 0);
+    @include display (flex);
+    @include justify-content (center);
+    @include flex-direction (column);
+
+    @media all and (max-width: $screen-lg-max) {
+        @include calc (height, "100% - #{$col-main_height}");
+    }
+
+    @media all and (max-width: $screen-md-max) {
+        @include calc (height, "50% - 100px");
+    }
+
+    @media all and (max-width: $screen-sm-max) {
+        height: auto;
+        min-height: 250px;
+    }
+
+    > * {
+        padding-top: 20px;
+        padding-bottom: 20px;
+        padding-left: 20px;
+        padding-right: 20px;
+
+        @media all and (max-width: $screen-md-max) {
+            padding-top: 10px;
+            padding-bottom: 10px;
+            padding-left: 10px;
+            padding-right: 10px;
+        } 
+    }
+}
+
+.col-side--content {
+    font-size: 24px;
+    
+    @media all and (max-width: $screen-lg-max) {
+        font-size: 28px;
+    }
+
+    @media all and (max-width: $screen-md-max) {
+        font-size: 20px;
+    }
+}

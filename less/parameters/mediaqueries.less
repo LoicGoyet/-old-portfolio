@@ -1,0 +1,44 @@
+@screen-xs-max: 400px;
+
+@screen-sm-min: 401px;
+@screen-sm-max: 767px;
+
+@screen-md-min: 768px;
+@screen-md-max: 991px;
+
+@screen-lg-min: 992px;
+@screen-lg-max: 1199px;
+
+@screen-xl-min: 1200px;
+
+
+.responsive-class(@class, @property, @value) {
+    .@{class},
+    .@{class}-xs {
+        @{property}: @value;
+    }
+
+    @media all and (min-width: @screen-sm-min) {
+        .@{class}-sm {
+            @{property}: @value;
+        }
+    }
+
+    @media all and (min-width: @screen-md-min) {
+        .@{class}-md {
+            @{property}: @value;
+        }
+    }
+
+    @media all and (min-width: @screen-lg-min) {
+        .@{class}-lg {
+            @{property}: @value;
+        }
+    }
+
+    @media all and (min-width: @screen-xl-min) {
+        .@{class}-xl {
+            @{property}: @value;
+        }
+    }
+}
