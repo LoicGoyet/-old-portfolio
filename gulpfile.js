@@ -10,7 +10,8 @@ var gulp  = require('gulp'),
     twig = require('gulp-twig'),
     bower = require('gulp-bower'),
     gutil = require('gulp-util'),
-    fs = require('fs');
+    fs = require('fs'),
+    uncss = require('gulp-uncss');
 
 
 
@@ -21,12 +22,7 @@ gulp.task('default', ['watch-dev']);
 
 gulp.task('watch-dev', function() {
     livereload.listen();
-    gulp.watch('src/scss/bricks/*.scss', ['build-style-bricks']);
-    gulp.watch('src/scss/components/*.scss', ['build-style-components']);
-    gulp.watch('src/scss/layouts/*.scss', ['build-style-layouts']);
-    gulp.watch('src/scss/compatibility/*.scss', ['build-style-compatibility']);
-    gulp.watch('src/scss/doc/*.scss', ['build-style-doc']);
-    gulp.watch('src/scss/parameters/*.scss', ['build-style-parameters']);
+    gulp.watch('src/scss/**/*.scss', ['build-style']);
     gulp.watch('src/templates/**/*.twig', ['build-template']);
     gulp.watch('src/js/**/*.js', ['build-javascript']);
     gulp.watch('src/img/**/*', ['build-images']);
@@ -34,12 +30,7 @@ gulp.task('watch-dev', function() {
 });
 
 gulp.task('compile', [
-    'build-style-bricks',
-    'build-style-components',
-    'build-style-layouts',
-    'build-style-compatibility',
-    'build-style-doc',
-    'build-style-parameters',
+    'build-style',
     'build-template',
     'build-javascript',
     'build-images',
@@ -59,27 +50,16 @@ function buildCss (src) {
         cascade: true,
         remove: true
     }))
+    .pipe(uncss({
+        html: ['web/index.html'],
+        htmlroot: 'web',
+    }))
     .pipe(csso())
     .pipe(gulp.dest('web/css'))
     .pipe(livereload());
 }
 
-gulp.task('build-style-bricks', function() { return buildCss('src/scss/bricks/bricks.scss'); });
-gulp.task('build-style-components', function() { return buildCss('src/scss/components/components.scss'); });
-gulp.task('build-style-layouts', function() { return buildCss('src/scss/layouts/layouts.scss'); });
-gulp.task('build-style-compatibility', function() { return buildCss('src/scss/compatibility/lte-ie9.scss'); });
-gulp.task('build-style-doc', function() { return buildCss('src/scss/doc/doc.scss'); });
-
-gulp.task('build-style-parameters', function() {
-    return buildCss([
-        'scss/bricks/bricks.scss',
-        'scss/components/components.scss',
-        'scss/layouts/layouts.scss',
-        'scss/compatibility/lte-ie9.scss',
-        'scss/doc/doc.scss',
-        'scss/ugly.scss'
-    ]);
-});
+gulp.task('build-style', function() { return buildCss('src/scss/style.scss'); });
 
 // template
 gulp.task('build-template', function() {
