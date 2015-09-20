@@ -5,6 +5,7 @@ $colors: (
     green-dark: #014234,
     red: #e36566,
     red-dark: #aa1f20,
+    blue: #2574A7,
     gray: #f5f5f5,
     gray-dark: #b5b5b5,
     anthracite: #2b2f3a,
@@ -45,9 +46,9 @@ $color-helper--enable--border-color: false;
 $color-helper--selector--border-color: 'border-color-';
 
 // fill | svg
-$color-helper--enable--fill-color: false;
-$color-helper--selector--fill-color: 'fill-';
+$color-helper--enable--fill-color: true;
+$color-helper--selector--fill-color: 'fill--';
 
 // stroke | svg
-$color-helper--enable--stroke-color: false;
-$color-helper--selector--stroke-color: 'stroke-';
+$color-helper--enable--stroke-color: true;
+$color-helper--selector--stroke-color: 'stroke--';

@@ -3,24 +3,56 @@
 {% block content %}
     <div class="font-average" id="content">
         <div class="bg-color--white color--anthracite col-side" id="col-abilities">
-            <ul id="abilities-list">
-                <li><img src="/img/abilities/html5.svg" alt=""></li>
-                <li><img src="/img/abilities/css3.svg" alt=""></li>
-                <li><img src="/img/abilities/jquery.svg" alt=""></li>
-                <li><img src="/img/abilities/bootstrap.svg" alt=""></li>
-                <li><img src="/img/abilities/github.svg" alt=""></li>
-                <li><img src="/img/abilities/symfony2.svg" alt=""></li>
-                <li><img src="/img/abilities/Victoire.svg" alt=""></li>
-                <li><img src="/img/abilities/magento.svg" alt=""></li>
-                <li><img src="/img/abilities/prestashop.svg" alt=""></li>
-                <li><img src="/img/abilities/photoshop.svg" alt=""></li>
-                <li><img src="/img/abilities/Sketch.svg" alt=""></li>
+            <ul class="fill--blue" id="abilities-list">
+                <li>
+                    {% include 'svg/html5.twig' %}
+                </li>
+
+                <li>
+                    {% include 'svg/css3.twig' %}
+                </li>
+
+                <li>
+                    {% include 'svg/jquery.twig' %}
+                </li>
+
+                <li>
+                    {% include 'svg/bootstrap.twig' %}
+                </li>
+
+                <li>
+                    {% include 'svg/github.twig' %}
+                </li>
+
+                <li>
+                    {% include 'svg/symfony2.twig' %}
+                </li>
+
+                <li>
+                    {% include 'svg/Victoire.twig' %}
+                </li>
+
+                <li>
+                    {% include 'svg/magento.twig' %}
+                </li>
+
+                <li>
+                    {% include 'svg/prestashop.twig' %}
+                </li>
+
+                <li>
+                    {% include 'svg/photoshop.twig' %}
+                </li>
+
+                <li>
+                    {% include 'svg/Sketch.twig' %}
+                </li>
             </ul>
         </div>
 
         <div class="bg-color--gray color--anthracite col-side color-gray-dark" id="col-git">
             <div class="text-center" id="col-git--img">
-                <img src="/image/git.svg">
+                {% include 'svg/github.twig' %}
             </div>
 
             <div class="col-side--content text-center" id="col-git--content">
@@ -63,7 +95,7 @@
 
         <div class="bg-color--red col-side" id="col-appventus">
             <div class="text-center" id="col-appventus--img">
-                <img src="/image/appventus.svg">
+                {% include 'svg/appventus.twig' %}
             </div>
 
             <div class="col-side--content color--red-dark" id="col-appventus--content">
@@ -73,7 +105,7 @@
 
         <div class="bg-color--green color--white col-side" id="col-victoire">
             <div class="text-center">
-                <img src="/image/victoire.svg">
+                {% include 'svg/victoire.twig' %}
             </div>
 
             <div class="col-side--content color--green-dark" id="col-victoire--content">
