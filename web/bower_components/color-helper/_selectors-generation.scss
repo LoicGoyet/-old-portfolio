@@ -1,0 +1,54 @@
+@function color-helper--construct-responsive-selector($selector, $breakpoint, $state) {
+    @if $breakpoint != '' {
+        @return $selector + '-' + $breakpoint + $state;
+    }
+    @return $selector + $state;
+}
+
+@function color-helper--construct-selector--property-picker($property) {
+    @if $property == 'background-color' {
+        @return $color-helper--selector--background-color;
+    } @elseif $property == 'color' {
+        @return $color-helper--selector--text-color;
+    } @elseif $property == 'border-color' {
+        @return $color-helper--selector--border-color;
+    } @elseif $property == 'fill' {
+        @return $color-helper--selector--fill-color;
+    } @elseif $property == 'stroke' {
+        @return $color-helper--selector--stroke-color;
+    }
+
+    @return false;
+}
+
+@function color-helper--construct-selector--state-picker($state) {
+    @if $state == 'hover' {
+        @return $color-helper--selector__suffix--state-hover;
+    } @elseif $state == 'active' {
+        @return $color-helper--selector__suffix--state-active;
+    } @elseif $state == 'focus' {
+        @return $color-helper--selector__suffix--state-focus;
+    } @elseif $state == 'visited' {
+        @return $color-helper--selector__suffix--state-visited;
+    }
+
+    @return '';
+}
+
+@function color-helper--construct-selector($property, $label, $breakpoint, $state: null) {
+    $property: color-helper--construct-selector--property-picker($property);
+    $state: color-helper--construct-selector--state-picker($state);
+    @return color-helper--construct-responsive-selector('.' + $property + $label, $breakpoint, $state);
+}
+
+@function color-helper--construct-state-selector($state) {
+    @if $state == 'hover' {
+        @return $color-helper--selector__append--state-hover;
+    } @elseif $state == 'active' {
+        @return $color-helper--selector__append--state-active;
+    } @elseif $state == 'focus' {
+        @return $color-helper--selector__append--state-focus;
+    } @elseif $state == 'visited' {
+        @return $color-helper--selector__append--state-visited;
+    }
+}

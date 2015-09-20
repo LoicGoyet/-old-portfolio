@@ -9,5 +9,7 @@
     "src/bower_components",
     "web"
   ],
-  "dependencies": {}
+  "dependencies": {
+      "color-helper": "1.3.1"
+  }
 }
