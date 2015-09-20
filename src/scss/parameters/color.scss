@@ -1,0 +1,13 @@
+$black: #000;
+$white: #fff;
+$green: #04BF96;
+$green-dark: darken($green, 25%);
+$red: #e36566;
+$red-dark: darken($red, 25%);
+$gray: #f5f5f5;
+$gray-dark: darken($gray, 25%);
+$anthracite: #2b2f3a;
+$anthracite-light: #66737e;
+
+$colors: $black $white $green $green-dark $red $red-dark $gray $gray-dark $anthracite $anthracite-light;
+$colors_name: black white green green-dark red red-dark gray gray-dark anthracite anthracite-light;

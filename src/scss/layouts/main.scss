@@ -1,0 +1,70 @@
+#col-main {
+    @include display(flex);
+    @include flex-direction(column);
+    @include justify-content(center);
+    @include flex (0 0 $col-main_width__xl);
+
+    position: relative;
+
+    font-size: 30px;
+    line-height: 2;
+    text-align: center;
+
+    strong {
+        font-size: 40px;
+        letter-spacing: 0.01em;
+    }
+
+    @media all and (max-width: $screen-lg-max) {
+        @include flex (0 0 100% !important);
+        @include order (-1);
+        height: $col-main_height;
+
+        font-size: 28px;
+        line-height: 1.8;
+
+        strong {
+            font-size: 36px;
+        }
+    }
+
+    @media all and (max-width: $screen-sm-max) {
+        @include flex-direction(row);
+        font-size: 20px;
+        height: $col-main_height__sm;
+        line-height: $col-main_height__sm;
+
+        strong {
+            font-size: 24px;
+            margin-right: 10px;
+            margin-left: 10px;
+        }
+    }
+}
+
+#col-main-btn {
+    @include display (flex);
+    margin-left: $col-main-btn_gutter / 2;
+    margin-right: $col-main-btn_gutter / 2;
+    margin-top: $col-main-btn_gutter * 2;
+
+    @media all and (max-width: $screen-lg-max) {
+        margin-top: 0;
+        position: absolute;
+        bottom: $col-main-btn_gutter__lg;
+        right: $col-main-btn_gutter__lg;
+        margin-left: $col-main-btn_gutter__lg / 2 * -1;
+        margin-right: $col-main-btn_gutter__lg / 2 * -1;
+    }
+
+    > * {
+        @include flex (1 1 0);
+        margin-left: $col-main-btn_gutter / 2;
+        margin-right: $col-main-btn_gutter / 2;
+
+        @media all and (max-width: $screen-lg-max) {
+            margin-left: $col-main-btn_gutter__lg / 2;
+            margin-right: $col-main-btn_gutter__lg / 2;
+        }
+    }
+}

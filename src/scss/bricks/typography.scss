@@ -1,0 +1,26 @@
+@include font-face ("average", "../../typography/average/Average-Regular");
+@include font-face ("fjallaone", "../../typography/fjallaone/FjallaOne-Regular");
+
+@include responsive-class (thin, font-weight, 100);
+@include responsive-class (light, font-weight, 300);
+@include responsive-class (normal-weight, font-weight, 400);
+@include responsive-class (strong, font-weight, 600);
+@include responsive-class (bold, font-weight, 900);
+@include responsive-class (text-center, text-align, center);
+
+.font-average {
+    font-family: 'average';
+}
+
+.font-fjallaone {
+    font-family: 'fjallaone';
+    letter-spacing: 0.01em;
+}
+
+a {
+    &:hover,
+    &:focus,
+    &:active {
+        text-decoration: none;
+    }
+}

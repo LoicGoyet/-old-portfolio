@@ -1,10 +1,15 @@
 {
-  "name": "loicgoyet",
+  "name": "Front Lab",
+  "version": "1.1.2",
+  "description": "A light architecture in order to kickstart front end inspirations.",
   "authors": [
     "Loic Goyet <loic@appventus.com>"
   ],
+  "ignore": [
+    "src/bower_components",
+    "web"
+  ],
   "dependencies": {
-    "sully-prefixes": "master",
-    "bourbon": "4.2.0"
+      "bourbon": "4.2.0"
   }
 }

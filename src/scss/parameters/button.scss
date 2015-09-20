@@ -1,0 +1,8 @@
+$btn_fontSize: 16px;
+$btn_lineHeight: 20px;
+$btn_paddingVertical: 6px;
+$btn_borderWidth: 2px;
+$btn_height: $btn_lineHeight + $btn_paddingVertical * 2 + $btn_borderWidth * 2; // Do not directly rules
+
+$btn_color: $anthracite-light;
+$btn_color-_state: $white;

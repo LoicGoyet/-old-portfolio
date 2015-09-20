@@ -1,0 +1,75 @@
+#abilities-list {
+    @include display (flex);
+    @include flex-wrap (wrap);
+    @include box-align(center);
+    list-style: none;
+    padding: 0;
+    margin: 0;
+
+    > * {
+        @include flex (1 1 70px);
+        text-align: center;
+        padding: 10px 5px;
+    }
+
+    #col-abilities {
+        @media all and (max-width: $screen-md-max) and (min-width: $screen-sm-min) {
+            @include order (1);
+        }
+    }
+}
+
+.col-side--list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+    @media all and (max-width: $screen-md-max) {
+        @include display (flex);
+        @include flex-wrap (wrap);
+    }
+
+    a {
+        display: block;
+        text-align: center;
+        line-height: 50px;
+        color: darken($gray, 25%);
+        text-decoration: none;
+
+        &:hover,
+        &:focus,
+        &:active {
+            color: $gray;
+            background-color: darken($gray, 15%);
+        }
+    }
+
+    > * {
+        @media all and (max-width: $screen-md-max) {
+            @include flex (0 0 50%);
+        }
+
+        &:nth-child(2) {
+            @media all and (max-width: $screen-md-max) {
+                border-top: 0;
+            }
+        }
+
+        &:nth-child(2n + 2) {
+            @media all and (max-width: $screen-md-max) {
+                border-left: 1px solid darken($gray, 10%);
+                @include box-sizing (border-box);
+            }
+        }
+
+        + * {
+            border-top: 1px solid darken($gray, 10%);
+        }
+    }
+
+    a {
+        @media all and (max-width: $screen-md-max) {
+            font-size: 13px;
+        }
+    }
+}
