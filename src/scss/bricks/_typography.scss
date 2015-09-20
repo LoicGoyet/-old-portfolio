@@ -1,0 +1,37 @@
+@font-face {
+    font-family: 'average';
+    font-style: normal;
+    font-weight: 400;
+    src: url('../font/average/Average-Regular.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'fjallaone';
+    font-style: normal;
+    font-weight: 400;
+    src: url('../font/fjallaone/FjallaOne-Regular.ttf') format('truetype');
+}
+
+@include responsive-class (thin, font-weight, 100);
+@include responsive-class (light, font-weight, 300);
+@include responsive-class (normal-weight, font-weight, 400);
+@include responsive-class (strong, font-weight, 600);
+@include responsive-class (bold, font-weight, 900);
+@include responsive-class (text-center, text-align, center);
+
+.font-average {
+    font-family: 'average';
+}
+
+.font-fjallaone {
+    font-family: 'fjallaone';
+    letter-spacing: .01em;
+}
+
+a {
+    &:hover,
+    &:focus,
+    &:active {
+        text-decoration: none;
+    }
+}

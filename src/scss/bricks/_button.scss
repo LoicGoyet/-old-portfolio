@@ -1,0 +1,42 @@
+.btn {
+    font-size: $btn_fontSize;
+    line-height: $btn_lineHeight;
+    padding-top: $btn_paddingVertical;
+    padding-bottom: $btn_paddingVertical;
+    border-width: $btn_borderWidth;
+
+    color: $btn_color;
+    text-decoration: none;
+    border-style: solid;
+
+    @media all and (max-width: $screen-xs-max) {
+        display: none;
+    }
+
+    &:hover, &.hover, &.is-hover,
+    &:active, &.active, &.is-active,
+    &:focus, &.focus, &.is-focus {
+        color: $btn_color-_state;
+    }
+
+    svg {
+        vertical-align: middle;
+    }
+
+    path {
+        fill: $btn_color;
+    }
+
+    &:hover, &.hover, &.is-hover {
+        path {
+            fill: $btn_color-_state;
+        }
+    }
+}
+
+.btn-label {
+    @media all and (max-width: $screen-lg-max) {
+        display: none;
+        visibility: hidden;
+    }
+}

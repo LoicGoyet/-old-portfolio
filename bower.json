@@ -1,10 +1,15 @@
 {
-  "name": "loicgoyet",
+  "name": "Loic Goyet's Folio",
+  "version": "1.1.0",
+  "description": "A light architecture in order to kickstart front end inspirations.",
   "authors": [
     "Loic Goyet <loic@appventus.com>"
   ],
+  "ignore": [
+    "src/bower_components",
+    "web"
+  ],
   "dependencies": {
-    "sully-prefixes": "master",
-    "bourbon": "4.2.0"
+      "color-helper": "1.3.1"
   }
 }

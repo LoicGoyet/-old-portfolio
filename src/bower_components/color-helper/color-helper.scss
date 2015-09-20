@@ -1,0 +1,39 @@
+@import 'pick-color';
+@import 'parameters';
+@import 'selectors-generation';
+@import 'rules-generation';
+
+$color-helper--property-list: (
+    ('background-color', $color-helper--enable--background-color),
+    ('color', $color-helper--enable--text-color),
+    ('border-color', $color-helper--enable--border-color),
+    ('fill', $color-helper--enable--fill-color),
+    ('stroke', $color-helper--enable--stroke-color),
+);
+
+$color-helper--state-list: (
+    ('hover', $color-helper--enable--state-hover),
+    ('active', $color-helper--enable--state-active),
+    ('focus', $color-helper--enable--state-focus),
+    ('visited', $color-helper--enable--state-visited),
+);
+
+@each $property, $enable, $selector in $color-helper--property-list {
+    @if $enable {
+        @each $label, $value in $colors {
+            @include color-helper--rules-generator($property, $label, $value);
+
+            @if $color-helper--enable--breakpoints {
+                @each $breakpoint, $query in $color-helper--breakpoints {
+                    @if $query == 0 {
+                        @include color-helper--rules-generator($property, $label, $value, $breakpoint);
+                    } @else {
+                        @media (min-width: $query) {
+                            @include color-helper--rules-generator($property, $label, $value, $breakpoint);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
