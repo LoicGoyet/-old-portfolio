@@ -38,11 +38,11 @@ body {
     flex-direction: column;
 
     @media all and (max-width: $screen-lg-max) {
-        height: calc(100% - #{$col-main_height});
+        min-height: calc(100% - #{$col-main_height});
     }
 
     @media all and (max-width: $screen-md-max) {
-        height: calc(50% - 100px);
+        min-height: calc(50% - 100px);
     }
 
     @media all and (max-width: $screen-sm-max) {
