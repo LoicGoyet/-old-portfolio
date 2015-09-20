@@ -9,8 +9,8 @@
     text-decoration: none;
     border-style: solid;
 
-    @media all and (max-width: $screen-lg-max) {
-        width: 37px;
+    @media all and (max-width: $screen-xs-max) {
+        display: none;
     }
 
     &:hover, &.hover, &.is-hover,

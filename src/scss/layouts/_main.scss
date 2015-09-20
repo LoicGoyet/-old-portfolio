@@ -40,6 +40,10 @@
             margin-left: 10px;
         }
     }
+
+    @media all and (max-width: $screen-xs-max) {
+        font-size: 14px;
+    }
 }
 
 #col-main-btn {
