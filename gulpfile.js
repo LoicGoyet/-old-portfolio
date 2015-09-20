@@ -30,6 +30,7 @@ gulp.task('watch-dev', function() {
     gulp.watch('src/templates/**/*.twig', ['build-template']);
     gulp.watch('src/js/**/*.js', ['build-javascript']);
     gulp.watch('src/img/**/*', ['build-images']);
+    gulp.watch('src/img/**/*', ['build-fonts']);
 });
 
 gulp.task('compile', [
@@ -41,7 +42,8 @@ gulp.task('compile', [
     'build-style-parameters',
     'build-template',
     'build-javascript',
-    'build-images'
+    'build-images',
+    'build-fonts'
  ], function() {});
 
 
@@ -100,6 +102,13 @@ gulp.task('build-javascript', function() {
 gulp.task('build-images', function() {
     return gulp.src('src/img/**/*')
         .pipe(gulp.dest('web/img'))
+        .pipe(livereload());
+});
+
+// images
+gulp.task('build-fonts', function() {
+    return gulp.src('src/font/**/*')
+        .pipe(gulp.dest('web/font'))
         .pipe(livereload());
 });
 

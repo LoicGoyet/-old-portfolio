@@ -1,5 +1,5 @@
-@include font-face ("average", "../../typography/average/Average-Regular");
-@include font-face ("fjallaone", "../../typography/fjallaone/FjallaOne-Regular");
+@include font-face ("average", "../../font/average/Average-Regular");
+@include font-face ("fjallaone", "../../font/fjallaone/FjallaOne-Regular");
 
 @include responsive-class (thin, font-weight, 100);
 @include responsive-class (light, font-weight, 300);
@@ -14,7 +14,7 @@
 
 .font-fjallaone {
     font-family: 'fjallaone';
-    letter-spacing: 0.01em;
+    letter-spacing: .01em;
 }
 
 a {
