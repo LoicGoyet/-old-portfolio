@@ -1,0 +1,11 @@
+scss_files: 'app/src/sass/**/*.scss'
+
+linters:
+  Indentation:
+    width: 4
+  PropertySortOrder:
+    enabled: false
+  NameFormat:
+    enabled: false
+  SelectorFormat:
+    enabled: false

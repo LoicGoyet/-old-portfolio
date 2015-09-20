@@ -1,5 +1,24 @@
-@include font-face ("average", "../../font/average/Average-Regular");
-@include font-face ("fjallaone", "../../font/fjallaone/FjallaOne-Regular");
+@font-face {
+    font-family: 'average';
+    font-style: normal;
+    font-weight: 400;
+    src: url('../../font/average/Average-Regular.eot?#iefix') format('embedded-opentype'),
+         url('../../font/average/Average-Regular.woff2') format('woff2'),
+         url('../../font/average/Average-Regular.woff') format('woff'),
+         url('../../font/average/Average-Regular.ttf') format('truetype'),
+         url('../../font/average/Average-Regular.svg#average') format('svg');
+}
+
+@font-face {
+    font-family: 'fjallaone';
+    font-style: normal;
+    font-weight: 400;
+    src: url('../../font/fjallaone/FjallaOne-Regular.eot?#iefix') format('embedded-opentype'),
+         url('../../font/fjallaone/FjallaOne-Regular.woff2') format('woff2'),
+         url('../../font/fjallaone/FjallaOne-Regular.woff') format('woff'),
+         url('../../font/fjallaone/FjallaOne-Regular.ttf') format('truetype'),
+         url('../../font/fjallaone/FjallaOne-Regular.svg#fjallaone') format('svg');
+}
 
 @include responsive-class (thin, font-weight, 100);
 @include responsive-class (light, font-weight, 300);

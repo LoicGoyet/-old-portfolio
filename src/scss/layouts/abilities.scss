@@ -1,20 +1,20 @@
 #abilities-list {
-    @include display (flex);
-    @include flex-wrap (wrap);
-    @include box-align(center);
+    display: flex;
+    flex-wrap: wrap;
+    box-align: center;
     list-style: none;
     padding: 0;
     margin: 0;
 
     > * {
-        @include flex (1 1 70px);
+        flex: 1 1 70px;
         text-align: center;
         padding: 10px 5px;
     }
 
     #col-abilities {
         @media all and (max-width: $screen-md-max) and (min-width: $screen-sm-min) {
-            @include order (1);
+            order: 1;
         }
     }
 }
@@ -25,8 +25,8 @@
     padding: 0;
 
     @media all and (max-width: $screen-md-max) {
-        @include display (flex);
-        @include flex-wrap (wrap);
+        display: flex;
+        flex-wrap: wrap;
     }
 
     a {
@@ -46,7 +46,7 @@
 
     > * {
         @media all and (max-width: $screen-md-max) {
-            @include flex (0 0 50%);
+            flex: 0 0 50%;
         }
 
         &:nth-child(2) {
@@ -58,7 +58,7 @@
         &:nth-child(2n + 2) {
             @media all and (max-width: $screen-md-max) {
                 border-left: 1px solid darken($gray, 10%);
-                @include box-sizing (border-box);
+                box-sizing: border-box;
             }
         }
 

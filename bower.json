@@ -1,6 +1,6 @@
 {
-  "name": "Front Lab",
-  "version": "1.1.2",
+  "name": "Loic Goyet's Folio",
+  "version": "1.1.0",
   "description": "A light architecture in order to kickstart front end inspirations.",
   "authors": [
     "Loic Goyet <loic@appventus.com>"
@@ -9,7 +9,5 @@
     "src/bower_components",
     "web"
   ],
-  "dependencies": {
-      "bourbon": "4.2.0"
-  }
+  "dependencies": {}
 }

@@ -1,8 +1,8 @@
 #col-main {
-    @include display(flex);
-    @include flex-direction(column);
-    @include justify-content(center);
-    @include flex (0 0 $col-main_width__xl);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex: 0 0 $col-main_width__xl;
 
     position: relative;
 
@@ -12,12 +12,12 @@
 
     strong {
         font-size: 40px;
-        letter-spacing: 0.01em;
+        letter-spacing: .01em;
     }
 
     @media all and (max-width: $screen-lg-max) {
-        @include flex (0 0 100% !important);
-        @include order (-1);
+        flex: 0 0 100% !important;
+        order: -1;
         height: $col-main_height;
 
         font-size: 28px;
@@ -29,7 +29,7 @@
     }
 
     @media all and (max-width: $screen-sm-max) {
-        @include flex-direction(row);
+        flex-direction: row;
         font-size: 20px;
         height: $col-main_height__sm;
         line-height: $col-main_height__sm;
@@ -43,7 +43,7 @@
 }
 
 #col-main-btn {
-    @include display (flex);
+    display: flex;
     margin-left: $col-main-btn_gutter / 2;
     margin-right: $col-main-btn_gutter / 2;
     margin-top: $col-main-btn_gutter * 2;
@@ -58,7 +58,7 @@
     }
 
     > * {
-        @include flex (1 1 0);
+        flex: 1 1 0;
         margin-left: $col-main-btn_gutter / 2;
         margin-right: $col-main-btn_gutter / 2;
 
