@@ -51,11 +51,10 @@ function buildCss (src) {
         remove: true
     }))
     .pipe(uncss({
-        html: ['web/index.html'],
-        htmlroot: 'web',
+        html: ['index.html'],
     }))
     .pipe(csso())
-    .pipe(gulp.dest('web/css'))
+    .pipe(gulp.dest('css'))
     .pipe(livereload());
 }
 
@@ -65,7 +64,7 @@ gulp.task('build-style', function() { return buildCss('src/scss/style.scss'); })
 gulp.task('build-template', function() {
     return gulp.src('src/templates/*.twig')
         .pipe(twig())
-        .pipe(gulp.dest('web'))
+        .pipe(gulp.dest('.'))
         .pipe(livereload());
 });
 
@@ -74,28 +73,28 @@ gulp.task('build-javascript', function() {
     return gulp.src('src/js/**/*.js')
         .pipe(jshint())
         .pipe(jshint.reporter('jshint-stylish'))
-        .pipe(gulp.dest('web/js'))
+        .pipe(gulp.dest('js'))
         .pipe(livereload());
 });
 
 // images
 gulp.task('build-images', function() {
     return gulp.src('src/img/**/*')
-        .pipe(gulp.dest('web/img'))
+        .pipe(gulp.dest('img'))
         .pipe(livereload());
 });
 
 // images
 gulp.task('build-fonts', function() {
     return gulp.src('src/font/**/*')
-        .pipe(gulp.dest('web/font'))
+        .pipe(gulp.dest('font'))
         .pipe(livereload());
 });
 
 // bower
 gulp.task('bower', function() {
   return bower()
-    .pipe(gulp.dest('web/bower_components'));
+    .pipe(gulp.dest('bower_components'));
 });
 
 
